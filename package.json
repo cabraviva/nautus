@@ -29,7 +29,7 @@
         "@octokit/rest": "^19.0.7",
         "adm-zip": "^0.5.10",
         "axios": "^1.4.0",
-        "axios-cookiejar-support": "^4.0.6",
+        "axios-cookiejar-support": "^5.0.3",
         "chalk": "^4.1.2",
         "chokidar": "^3.5.3",
         "deasync": "^0.1.28",
