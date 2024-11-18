@@ -26,7 +26,7 @@
     },
     "homepage": "https://github.com/greencoder001/nautus#readme",
     "dependencies": {
-        "@octokit/rest": "^19.0.7",
+        "@octokit/rest": "^21.0.2",
         "adm-zip": "^0.5.10",
         "axios": "^1.4.0",
         "axios-cookiejar-support": "^4.0.6",
