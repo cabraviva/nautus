@@ -5,6 +5,10 @@ test
 .vscode/
 token.txt
 
+# TypeScript build output
+dist/
+*.tsbuildinfo
+
 # Logs
 logs
 *.log
