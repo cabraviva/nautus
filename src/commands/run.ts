@@ -16,13 +16,13 @@ async function runCommand(args: string[]): Promise<void> {
         await executeScript('Prep');
         agentEngine.default.runAll();
         let edr = false;
-        await executeScript('Run', async (runExitCode: number) => {
+        await executeScript('Run', (async (runExitCode: number) => {
             edr = true;
-            await executeScript('Cleanup', (code: number) => {
+            await executeScript('Cleanup', ((code: number) => {
                 if (code !== 0) process.exit(code);
-            });
+            }) as any);
             process.exit(runExitCode);
-        });
+        }) as any);
         if (!edr) await executeScript('Cleanup');
         process.exit(); // Make sure agents aren't running anymore
     }

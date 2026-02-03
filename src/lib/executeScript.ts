@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import chalk from 'chalk';
 import axios from 'axios';
 
-type ExitFunction = (code: number) => never;
+type ExitFunction = ((code?: number) => never) | typeof process.exit;
 type CommandResult = [number, string];
 
 async function findBinCommand(binCommand: string): Promise<string | undefined> {

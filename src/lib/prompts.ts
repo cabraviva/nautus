@@ -1,5 +1,7 @@
 import chalk from 'chalk';
-import { Input, Toggle, Confirm, NumberPrompt, Select, MultiSelect } from 'enquirer';
+import Enquirer from 'enquirer';
+
+const { Input, Toggle, Confirm, NumberPrompt, Select, MultiSelect } = Enquirer as any;
 
 type ValidatorFunction<T> = (answer: T) => boolean | Promise<boolean>;
 
