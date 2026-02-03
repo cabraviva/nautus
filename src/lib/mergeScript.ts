@@ -1,6 +1,8 @@
 import { join } from 'path';
-import { readFileSync, writeFileSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import chalk from 'chalk';
+
+const { readFileSync, writeFileSync } = fse;
 
 export default function mergeScript(scriptName: string, code: string): void {
     try {

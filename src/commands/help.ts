@@ -18,6 +18,7 @@ async function helpCommand(args: string[]): Promise<void> {
     const commandsDir = __dirname;
     for (const registeredCMD of readdirSync(commandsDir)) {
         if (registeredCMD.startsWith('@')) continue;
+        if (!registeredCMD.endsWith('.js')) continue; // Skip non-JS files
         const commandModule = await import(join(commandsDir, registeredCMD));
         const usage = commandModule.default[1];
         const explanation = commandModule.default[2];

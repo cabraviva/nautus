@@ -1,7 +1,9 @@
 import chalk from 'chalk';
-import { removeSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import { join } from 'path';
 import isProjectInitialized from '../lib/isProjectInitialized.js';
+
+const { removeSync } = fse;
 
 async function deleteCommand(args: string[]): Promise<void> {
     if (!isProjectInitialized()) {

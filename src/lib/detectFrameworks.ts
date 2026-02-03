@@ -1,5 +1,7 @@
-import { readdirSync, statSync, existsSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import { join } from 'path';
+
+const { readdirSync, statSync, existsSync } = fse;
 
 export default function detectFrameworks(): string[] {
     const frameworks: string[] = [];

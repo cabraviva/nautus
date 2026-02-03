@@ -1,7 +1,9 @@
 import { join } from 'path';
-import { readJSONSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import { spawn } from 'child_process';
 import chalk from 'chalk';
+
+const { readJSONSync } = fse;
 
 const spwnSilent = (comd: string, args: string[]): Promise<number> => {
     return new Promise((resolve) => {

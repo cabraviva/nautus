@@ -1,12 +1,14 @@
 import { parse } from 'yaml';
 import { join } from 'path';
-import { readFileSync, existsSync, readdirSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import chalk from 'chalk';
 import chokidar from 'chokidar';
 import { minimatch } from 'minimatch';
 import { spawn } from 'child_process';
 import { platform } from 'os';
 import executeScript from './executeScript.js';
+
+const { readFileSync, existsSync, readdirSync } = fse;
 
 interface AgentWatches {
     tanks?: string[];

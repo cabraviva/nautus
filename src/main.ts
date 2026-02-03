@@ -20,7 +20,7 @@ const version = packageJson.version;
 
 (async () => {
     const commandsDir = join(__dirname, 'commands');
-    const registeredCMDs = readdirSync(commandsDir);
+    const registeredCMDs = readdirSync(commandsDir).filter(f => f.endsWith('.js'));
     
     for (const registeredCMD of registeredCMDs) {
         const cmdName = registeredCMD.substring(0, registeredCMD.length - 3);

@@ -1,6 +1,8 @@
 import { join, sep } from 'path';
-import { readdirSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import { minimatch } from 'minimatch';
+
+const { readdirSync } = fse;
 
 function findFilesRecursive(): string[] {
     const result: string[] = [];

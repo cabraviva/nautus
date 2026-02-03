@@ -1,10 +1,12 @@
 import { join } from 'path';
 import { platform } from 'os';
 import { exec, spawn } from 'child_process';
-import { readdir, pathExists, readJson } from 'fs-extra';
+import * as fse from 'fs-extra';
 import * as fs from 'fs';
 import chalk from 'chalk';
 import axios from 'axios';
+
+const { readdir, pathExists, readJson } = fse;
 
 type ExitFunction = ((code?: number) => never) | typeof process.exit;
 type CommandResult = [number, string];

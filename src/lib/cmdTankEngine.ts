@@ -1,11 +1,13 @@
 import { join } from 'path';
-import { existsSync, readFileSync, moveSync, rmSync } from 'fs-extra';
+import * as fse from 'fs-extra';
 import chalk from 'chalk';
 import { spawn } from 'child_process';
 import { parse } from 'yaml';
 import { v4 as uuid4 } from 'uuid';
 import { homedir } from 'os';
 import { resolveFiles, resolveFilesPlusFolders, resolveMinimum } from './pathResolver.js';
+
+const { existsSync, readFileSync, moveSync, rmSync } = fse;
 
 const spwn = (comd: string, args: string[], cwd: string | null = null): Promise<number> => {
     return new Promise((resolve) => {
