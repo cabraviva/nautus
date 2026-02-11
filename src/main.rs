@@ -4,12 +4,17 @@ use clap::{Parser, Subcommand};
 mod commands;
 mod js_executor;
 mod utils;
+mod tui;
 
 #[derive(Parser)]
 #[command(name = "nautus")]
 #[command(version = "1.6.3")]
 #[command(about = "Your one & only ultimate software development tool 🪸", long_about = None)]
 struct Cli {
+    /// Use interactive TUI mode
+    #[arg(long)]
+    tui: bool,
+    
     #[command(subcommand)]
     command: Option<Commands>,
 }
@@ -128,6 +133,11 @@ async fn main() -> Result<()> {
     
     // Check for version updates
     check_for_updates().await;
+    
+    // Check for TUI mode
+    if cli.tui {
+        return tui::run_tui().await;
+    }
     
     match cli.command {
         Some(Commands::Create) => commands::create::execute().await,

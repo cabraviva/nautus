@@ -7,6 +7,7 @@ pub async fn execute() -> Result<()> {
     println!("Nautus is your one & only ultimate software development tool 🪸");
     println!();
     println!("Use {} to see all available commands.", "nautus help".green());
+    println!("Or run {} to use the interactive menu.", "nautus --tui".green());
     println!();
     
     Ok(())
