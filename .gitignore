@@ -132,3 +132,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Rust artifacts
+/target
+Cargo.lock
+*.pdb
