@@ -2,6 +2,25 @@
 
 Your one & only ultimate software development tool
 
+> **🦀 Now available in Rust!** Nautus has been migrated to Rust for better performance while maintaining full compatibility with JavaScript scripts. See [RUST_MIGRATION.md](RUST_MIGRATION.md) for details.
+
+## Installation
+
+### Rust Version (Recommended)
+```bash
+# Build from source
+git clone https://github.com/cabraviva/nautus.git
+cd nautus
+cargo install --path .
+```
+
+See [BUILDING.md](BUILDING.md) for detailed installation instructions.
+
+### JavaScript Version (Legacy)
+```bash
+npm i nautus -g
+```
+
 # Use cases
 
 **Nautus can help you:**
